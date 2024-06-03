@@ -1,6 +1,7 @@
 import { Schema, model } from "mongoose";
 import { Role, Status } from "./user.constant";
 import { TUser } from "./user.interface";
+import { CollectionName } from "../../collectionName";
 
 const userSchema = new Schema<TUser>(
   {
@@ -16,5 +17,5 @@ const userSchema = new Schema<TUser>(
   }
 );
 
-const UserModel = model<TUser>("User", userSchema);
+const UserModel = model<TUser>(CollectionName.USER, userSchema);
 export default UserModel;
